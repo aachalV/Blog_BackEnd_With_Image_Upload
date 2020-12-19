@@ -27,7 +27,6 @@ This application extends the functionality of the blog backend express applicati
   3. Test using **Postman**
   
 #### The end points shall be tested using Postman using following requests
-  [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/e726bff4fa8c2ac9d444)
   
   > - data will be sent back as json objects
   
