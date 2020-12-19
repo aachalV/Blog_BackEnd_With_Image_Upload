@@ -17,7 +17,6 @@ const checkIfQuery = (req, res, next) => {
   let blog = blogs.filter((blog) => {
     return Object.keys(req.query).every((property) => {
       let reg = new RegExp(req.query[property], "i");
-      console.log(reg.test(blog[property]));
       return reg.test(blog[property]);
     });
   });

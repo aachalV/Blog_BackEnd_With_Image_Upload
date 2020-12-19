@@ -24,11 +24,11 @@
     "relatedLinks": "http://localhost:3000/blogList/blogs/2"
   },
   {
-    "id": "33tg5v57kiw35i61",
+    "id": "3",
     "blogAuthor": "Author",
     "blogHeader": "Author's blog",
     "blogContent": "Author's blog content",
-    "blogBannerImg": "http://localhost:3000/uploads/1608405577152-laptop.jpg",
+    "blogBannerImg": "http://localhost:3000/uploads/1608409762469-laptop.jpg",
     "relatedLinks": "http://localhost:3000/blogList/blogs/2"
   }
 ]
