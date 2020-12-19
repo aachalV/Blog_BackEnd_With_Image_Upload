@@ -8,7 +8,7 @@ const {
   createBlog,
   deleteBlogById,
 } = require("../controllers/blogController");
-const { upload } = require("../controllers/uploadImageController");
+const { upload } = require("../controllers/uploadImage");
 const router = express.Router();
 
 //End points

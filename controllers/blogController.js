@@ -34,7 +34,6 @@ const getAllBlogs = (req, res, next) => {
 };
 //Check Id
 const isIdValid = (req, res, next) => {
-  console.log("Entered IsValid");
   let id = req.params.id;
   let idExists = blogs.some((blog) => {
     return blog.id == id;
@@ -58,13 +57,11 @@ const getBlogById = (req, res, next) => {
   let blog = blogs.find((blog) => {
     return blog.id == id;
   });
-  console.log(blog);
   sendResponse(200, "Successfull", blog, req, res);
 };
 
 //middleware
 const verifyPostRequest = (req, res, next) => {
-  console.log("Verify>>>", req.body);
   const requiredProperties = ["blogAuthor", "blogHeader", "blogContent"];
   let result = requiredProperties.every((key) => {
     return req.body[key];
@@ -84,14 +81,27 @@ const createBlog = (req, res, next) => {
   if (!req.file) {
     console.log("No file received");
   }
-  const Url = req.protocol + "://" + req.get("host");
-  const imagePath = "/uploads/" + req.file.filename;
-  imageUrl = Url + imagePath;
+  // const Url = req.protocol + "://" + req.get("host");
+  // const imagePath = "/uploads/" + req.file.filename;
+  // imageUrl = Url + imagePath;
+
+  // const baseUrl = req.protocol + "://" + req.get("host") + req.originalUrl;
+  // const relatedBlog = "/" + req.body.relatedLinks[0];
+  // relatedLink = baseUrl + relatedBlog;
+
   let newBlog = new Blog(
     req.body.blogAuthor,
     req.body.blogHeader,
     req.body.blogContent,
-    imageUrl
+    //imageUrl,
+    req.protocol + "://" + req.get("host") + "/uploads/" + req.file.filename,
+    //relatedLink
+    req.protocol +
+      "://" +
+      req.get("host") +
+      req.originalUrl +
+      "/" +
+      req.body.relatedLinks[0]
   );
   blogs.push(newBlog);
   fs.writeFile(fileName, JSON.stringify(blogs, null, 2), (err) => {

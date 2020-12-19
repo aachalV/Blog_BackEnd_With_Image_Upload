@@ -1,9 +1,34 @@
 [
   {
-    "id": "33tg5shckiw1c5no",
+    "id": "1",
     "blogAuthor": "Santa",
     "blogHeader": "Santa's  blog",
     "blogContent": "Santa's blog content",
-    "blogBannerImg": "http://localhost:3000/uploads/1608402528350-laptop.jpg"
+    "blogBannerImg": "http://localhost:3000/uploads/1608402528350-laptop.jpg",
+    "relatedLinks": "http://localhost:3000/blogList/blogs/2"
+  },
+  {
+    "id": "2",
+    "blogAuthor": "Aachal",
+    "blogHeader": "Aachal's  blog",
+    "blogContent": "Aachal blog content",
+    "blogBannerImg": "http://localhost:3000/uploads/1608402876257-laptop.jpg",
+    "relatedLinks": "http://localhost:3000/blogList/blogs/33tg5uzikiw2z9k5"
+  },
+  {
+    "id": "33tg5uzikiw2z9k5",
+    "blogAuthor": "Alexaaaa",
+    "blogHeader": "Alexaaaa's blog",
+    "blogContent": "Alexaaaa's blog content",
+    "blogBannerImg": "http://localhost:3000/uploads/1608405286105-laptop.jpg",
+    "relatedLinks": "http://localhost:3000/blogList/blogs/2"
+  },
+  {
+    "id": "33tg5v57kiw35i61",
+    "blogAuthor": "Author",
+    "blogHeader": "Author's blog",
+    "blogContent": "Author's blog content",
+    "blogBannerImg": "http://localhost:3000/uploads/1608405577152-laptop.jpg",
+    "relatedLinks": "http://localhost:3000/blogList/blogs/2"
   }
 ]
