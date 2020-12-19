@@ -29,14 +29,14 @@ This application extends the functionality of the blog backend express applicati
 #### The end points shall be tested using Postman using following requests
   > - data will be sent back as json objects
   
-  1. Get all the blogs using 
+  1. Get all the blogs using following request
    >Get : (http://localhost:3000/blogList/blogs)
 
-  2. Get a specific blog with a blogId sent as a route parameter.
+  2. Get a specific blog with a blogId sent as a route parameter following request
    >Get : (http://localhost:3000/blogList/blogs/2)
    >- here "2" is id of the blog
    
-  3. Add New Blog
+  3. To Add New Blog use following request
    >  Post : (http://localhost:3000/blogList/blogs)
    > - Click "Body"
    > - Choose form-data to enter the contents as mentioned ahead
@@ -63,7 +63,7 @@ This application extends the functionality of the blog backend express applicati
    > - it will still return the blog with Author "Alex"
   
   5. To delete a specific blog corresponding to a blogId sent as a route parameter use request
-  > Delete : (http://localhost:3000/blogList/blogs/2)
-  >- here "2" is id of the blog
+  > Delete : (http://localhost:3000/blogList/blogs/3)
+  >- here "3" is id of the blog
   
 
