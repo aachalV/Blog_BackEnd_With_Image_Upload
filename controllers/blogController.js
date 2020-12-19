@@ -104,10 +104,31 @@ const createBlog = (req, res, next) => {
     sendResponse(200, "Sucessfull", [newBlog], req, res);
   });
 };
-
+//Delete Blog
+const deleteBlogById = (req, res, next) => {
+  let id = req.params.id;
+  let blogIndex = blogs.findIndex((blog) => blog.id == id);
+  blogToBeDeleted = blogs[blogIndex];
+  blogs.splice(blogIndex, 1);
+  fs.writeFile(fileName, JSON.stringify(blogs, null, 2), (err) => {
+    if (err) {
+      sendErrorMessage(
+        new AppError(
+          500,
+          "Internal Error",
+          "Internal Error Occured..Please try again later"
+        ),
+        req,
+        res
+      );
+    }
+    sendResponse(200, "Sucessfully Deleted", blogToBeDeleted, req, res);
+  });
+};
 module.exports.checkIfQuery = checkIfQuery;
 module.exports.getAllBlogs = getAllBlogs;
 module.exports.isIdValid = isIdValid;
 module.exports.getBlogById = getBlogById;
 module.exports.verifyPostRequest = verifyPostRequest;
 module.exports.createBlog = createBlog;
+module.exports.deleteBlogById = deleteBlogById;
