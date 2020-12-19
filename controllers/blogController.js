@@ -64,13 +64,8 @@ const getBlogById = (req, res, next) => {
 
 //middleware
 const verifyPostRequest = (req, res, next) => {
-  console.log(req.body);
-  const requiredProperties = [
-    "blogAuthor",
-    "blogHeader",
-    "blogContent",
-    "blogBannerImg",
-  ];
+  console.log("Verify>>>", req.body);
+  const requiredProperties = ["blogAuthor", "blogHeader", "blogContent"];
   let result = requiredProperties.every((key) => {
     return req.body[key];
   });
@@ -86,12 +81,17 @@ const verifyPostRequest = (req, res, next) => {
 };
 //create blog
 const createBlog = (req, res, next) => {
-  console.log(req.body);
+  if (!req.file) {
+    console.log("No file received");
+  }
+  const Url = req.protocol + "://" + req.get("host");
+  const imagePath = "/uploads/" + req.file.filename;
+  imageUrl = Url + imagePath;
   let newBlog = new Blog(
     req.body.blogAuthor,
     req.body.blogHeader,
     req.body.blogContent,
-    req.body.blogBannerImg
+    imageUrl
   );
   blogs.push(newBlog);
   fs.writeFile(fileName, JSON.stringify(blogs, null, 2), (err) => {
@@ -101,7 +101,7 @@ const createBlog = (req, res, next) => {
       });
       return err;
     }
-    sendResponse(200, "Sucessful", [newBlog], req, res);
+    sendResponse(200, "Sucessfull", [newBlog], req, res);
   });
 };
 

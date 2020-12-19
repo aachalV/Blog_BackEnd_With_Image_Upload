@@ -8,6 +8,8 @@ const router = require("./routes/blogRoutes");
 const app = express();
 app.use(express.json()); //middleware
 app.use("/blogList", router);
+//multer
+app.use(express.static(path.join(__dirname, "public")));
 
 app.listen(
   process.env.PORT,
