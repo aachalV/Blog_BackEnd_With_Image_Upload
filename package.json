@@ -1,0 +1,25 @@
+{
+  "name": "backend_blog",
+  "version": "1.0.0",
+  "description": "simple express server application that serves blog data.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aachalV/Blog_BackEnd_JsonFile.git"
+  },
+  "author": "Aachal Vartak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aachalV/Blog_BackEnd_JsonFile/issues"
+  },
+  "homepage": "https://github.com/aachalV/Blog_BackEnd_JsonFile#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "uniqid": "^5.2.0"
+  }
+}
